@@ -1,0 +1,40 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AutomationScript {
+    public static void main(String[] args) {
+        // Set the path of the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+        // Create a new instance of ChromeDriver
+        WebDriver driver = new ChromeDriver();
+
+        // Open the webpage
+        driver.get("https://pages.lazada.com.ph/wow/i/ph/act/home");
+
+        // Case 1: Find the element "birthday" by XPath and CSS
+        WebElement elementByXPath = driver.findElement(By.xpath("//elementXPath"));
+        WebElement elementByCSS = driver.findElement(By.cssSelector("elementCSS"));
+
+        // Case 2: Register by multiple browsers
+        // You can automate registration by opening multiple instances of different browsers,
+        // using each instance to perform separate registrations simultaneously.
+        // Example:
+        WebDriver driver1 = new ChromeDriver();
+        WebDriver driver2 = new FirefoxDriver();
+        // Perform registration steps on each driver instance
+
+        // Case 3: Register by multiple accounts (using Data-driven Excel file)
+        // Read the test data from an Excel file (e.g., using Apache POI library) and iterate over the data rows.
+        // Perform registration steps for each account using the data from each row.
+        // Example:
+        // Read data from Excel
+        // Iterate over rows
+        // Perform registration steps using data from each row
+
+        // Close the web driver
+        driver.quit();
+    }
+}
